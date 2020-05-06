@@ -22,3 +22,4 @@ Fecha: 5/5/2020     User:PT
 4. creacion directorios templates, css,img, js dentro de la app registroPersonas
 
 ----------------------------------------------
+
