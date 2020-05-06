@@ -11,3 +11,4 @@ Fecha: 5/5/2020     User:PT
 Creación de la app registroPersonas.
 
 ----------------------------------------------
+
