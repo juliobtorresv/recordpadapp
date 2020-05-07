@@ -25,4 +25,6 @@ Fecha: 5/5/2020     User:PT
 
 06/05/2020
 Pantalla de bienvenida
+Validación de usuario y clave importando las clases de django
+from django.contrib.auth import authenticate
 PTO
