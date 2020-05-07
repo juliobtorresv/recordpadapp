@@ -5,4 +5,8 @@ from django.conf import settings
 # Create your views here.
 
 def inicio(request):
-    return render(request,"index.html")
+    if request.method == "POST":
+        correo=request.POST["correo"]
+        return render(request,"principal.html",{"email":correo})
+    else:
+        return render(request,"index.html")
