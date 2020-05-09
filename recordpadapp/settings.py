@@ -73,12 +73,29 @@ WSGI_APPLICATION = 'recordpadapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+'''
+# Configuración original para SQLlite (JT)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+'''
+# Configuración para MySQl    (JT)
+# Cambio localhost por IP deberia funcionar en ambos equipos
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'recoad',
+        'USER': 'admin',
+        'PASSWORD': 'r3co4d',
+        'HOST': '127.0.0.1', # Cambio el localhost por IP (JT)
+        'PORT': '3306',
+    }
+}    
 
 
 # Password validation
