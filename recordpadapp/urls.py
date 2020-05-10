@@ -21,7 +21,8 @@ urlpatterns = [
  #   path('unidadEducativa/', include('unidadEducativa.urls')),
     path('admin/', admin.site.urls),
     path('',views.inicio),
-    path('principal',views.principal),
+    path('principal',views.principal, name='home'),
+    path('persona',views.persona_view)
 
 
 ]

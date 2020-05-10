@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
 from django.contrib.auth import authenticate
+from registroPersona.forms import PersonaForm
 
 # Create your views here.
 
@@ -32,3 +33,15 @@ def principal(request):
         else:
             #return render(request,"index.html")
             return HttpResponseRedirect("/")
+
+def persona_view(request):
+    if request.method == 'POST':
+        form = PersonaForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('principal')
+    else:
+        form = PersonaForm()
+    return render(request, 'persona_form.html', {'form':form})
+
+        
