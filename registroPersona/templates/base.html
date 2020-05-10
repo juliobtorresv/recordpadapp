@@ -35,13 +35,20 @@
     |
 
 <form method="POST" > {% csrf_token %}
+    <table class="ingreso">
+     <tr>
+        <td style="width: 200;"></td>
+        
+            <td style="width: 300;">
+             <div class="form-group">
+                {% block content %}
+                {% endblock %}  
+             </div>
+            </td>
+       
 
-   <div class="form-group">
-        {% block content %}
-
-        {% endblock %}  
-    </div>
-    
+    </tr>
+</table>
    
 
 </form>
