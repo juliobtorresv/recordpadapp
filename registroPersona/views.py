@@ -39,7 +39,8 @@ def persona_view(request):
         form = PersonaForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('principal')
+        return render(request,"principal.html")
+        #return redirect('principal')
     else:
         form = PersonaForm()
     return render(request, 'persona_form.html', {'form':form})
