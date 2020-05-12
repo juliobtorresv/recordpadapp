@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from recordpadapp.views import index,plantilla
 
 urlpatterns = [
+    path('',index),
     path('unidadEducativa/', include('unidadEducativa.urls')),
     path('admin/', admin.site.urls),
     path('registro/',include('registroPersona.urls')),
     
-
 
 ]
