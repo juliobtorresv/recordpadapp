@@ -6,7 +6,7 @@ from registroPersona.forms import PersonaForm
 
 # Create your views here.
 
-def inicio(request):
+def inicioPersona(request):
     if request.method == "POST":
         usuario=request.POST["usuario"]
         clave=request.POST["clave"]
