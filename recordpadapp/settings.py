@@ -25,7 +25,7 @@ SECRET_KEY = '%-+u($)=+-*rfbnik204xsy_4==d1=40lc6u7#xsv%nab75s6x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['186.4.224.175','127.0.0.1']
+ALLOWED_HOSTS = ['186.4.224.175']
 
 
 # Application definition
@@ -75,16 +75,16 @@ WSGI_APPLICATION = 'recordpadapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-'''
+
 # Configuración original para SQLlite (JT)
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-'''
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
 # Configuración para MySQl    (JT)
 # Cambio localhost por IP deberia funcionar en ambos equipos
 
@@ -94,7 +94,7 @@ DATABASES = {
         'NAME': 'recoad',
         'USER': 'admin',
         'PASSWORD': 'r3co4d',
-        'HOST': '127.0.0.1', # Cambio el localhost por IP (JT)
+        'HOST': 'localhost', # Cambio el localhost por IP (JT)
         'PORT': '3306',
     }
 }    

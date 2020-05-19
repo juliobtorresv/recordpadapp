@@ -1,11 +1,10 @@
 
 from django.urls import path
-from . import views
+from registroPersona import views
 
 
 urlpatterns = [
- 
-    path('',views.inicio),
+     path('',views.inicio),
     path('principal',views.principal),
     path('persona',views.persona_view),
 ]

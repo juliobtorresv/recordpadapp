@@ -15,18 +15,18 @@ def inicio(request):
         
         if user:
             request.session['usuario'] = True
-            return render(request,"principal.html",{"usuario":user})
+            return render(request,"registroPersona/base.html",{"usuario":user})
         else:
             request.session['usuario'] = False
-            return render(request,"index.html",{"error":mensaje})
+            return render(request,"registroPersona/index.html",{"error":mensaje})
     else:
-        return render(request,"index.html")
+        return render(request,"registroPersona/index.html")
 
 def principal(request):
         
         if "usuario" in request.session:
             if request.session['usuario']:
-                return render(request,"principal.html")
+                return render(request,"registroPersona/principal.html")
             else:
                # return render(request,"index.html")
                 return HttpResponseRedirect("/")
@@ -39,10 +39,10 @@ def persona_view(request):
         form = PersonaForm(request.POST)
         if form.is_valid():
             form.save()
-        return render(request,"confirmacion.html")
+        return render(request,"registroPersona/confirmacion.html")
         
     else:
         form = PersonaForm()
-    return render(request, 'persona_form.html', {'form':form})
+    return render(request, 'registroPersona/persona_form.html', {'form':form})
 
         
