@@ -25,7 +25,7 @@ SECRET_KEY = '%-+u($)=+-*rfbnik204xsy_4==d1=40lc6u7#xsv%nab75s6x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['186.4.224.175']
+ALLOWED_HOSTS = ['186.4.224.175', 'basedatos']
 
 
 # Application definition

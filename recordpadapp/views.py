@@ -6,5 +6,3 @@ from django.contrib.auth import authenticate
 def principal(request):
     return render(request,"baseApp.html")
 
-def inicioSesion(request):
-    return render(request,"registroPersona/index.html")

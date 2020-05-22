@@ -4,7 +4,7 @@ from registroPersona import views
 
 
 urlpatterns = [
-     path('',views.inicioPersona),
+    path('inicioSesion',views.inicioSesion),
     path('principal',views.principal),
     path('persona',views.persona_view),
 ]

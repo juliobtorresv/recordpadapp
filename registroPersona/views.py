@@ -6,7 +6,7 @@ from registroPersona.forms import PersonaForm
 
 # Create your views here.
 
-def inicioPersona(request):
+def inicioSesion(request):
     if request.method == "POST":
         usuario=request.POST["usuario"]
         clave=request.POST["clave"]
@@ -18,9 +18,9 @@ def inicioPersona(request):
             return render(request,"registroPersona/base.html",{"usuario":user})
         else:
             request.session['usuario'] = False
-            return render(request,"registroPersona/index.html",{"error":mensaje})
+            return render(request,"registroPersona/login.html",{"error":mensaje})
     else:
-        return render(request,"registroPersona/index.html")
+        return render(request,"registroPersona/login.html")
 
 def principal(request):
         
@@ -36,13 +36,23 @@ def principal(request):
 
 def persona_view(request):
     if request.method == 'POST':
-        form = PersonaForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return render(request,"registroPersona/confirmacion.html")
-        
+        usuario=request.POST["usuario"]
+        clave=request.POST["clave"]
+        mensaje='Credenciales no Válidas'
+        user = authenticate(username=usuario, password=clave)
+        if user:
+            request.session['usuario'] = True
+            form = PersonaForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return render(request,"registroPersona/confirmacion.html")
+        else:
+            request.session['usuario'] = False
+            return render(request,"registroPersona/inicioSesion",{"error":mensaje})
     else:
         form = PersonaForm()
-    return render(request, 'registroPersona/persona_form.html', {'form':form})
+        return render(request, 'registroPersona/persona_form.html', {'form':form})
+    
+
 
         
