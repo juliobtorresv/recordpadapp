@@ -19,9 +19,10 @@ from recordpadapp import views
 
 urlpatterns = [
     path('', views.principal),
+    path('servicios', views.servicios),
     path('', include('unidadEducativa.urls')),
     path('admin/', admin.site.urls),
     path('',include('registroPersona.urls')), 
-
+    
 
 ]

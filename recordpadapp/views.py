@@ -4,5 +4,7 @@ from django.conf import settings
 from django.contrib.auth import authenticate
 
 def principal(request):
-    return render(request,"baseApp.html")
+    return render(request,"principal.html")
+def servicios(request):
+    return render(request,"servicios.html")
 

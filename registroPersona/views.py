@@ -26,7 +26,7 @@ def principal(request):
         
         if "usuario" in request.session:
             if request.session['usuario']:
-                return render(request,"registroPersona/principal.html")
+                return render(request,"registroPersona/home.html")
             else:
                # return render(request,"index.html")
                 return HttpResponseRedirect("/")
@@ -45,7 +45,7 @@ def persona_view(request):
             form = PersonaForm(request.POST)
             if form.is_valid():
                 form.save()
-                return render(request,"registroPersona/confirmacion.html")
+                return render(request,"confirmacion.html")
         else:
             request.session['usuario'] = False
             return render(request,"registroPersona/inicioSesion",{"error":mensaje})
