@@ -25,7 +25,7 @@ SECRET_KEY = '%-+u($)=+-*rfbnik204xsy_4==d1=40lc6u7#xsv%nab75s6x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['186.4.224.175', 'basedatos']
+ALLOWED_HOSTS = ['186.4.224.175', 'basedatos', '192.168.100.53']
 
 
 # Application definition
@@ -94,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'recoad',
         'USER': 'admin',
-        'PASSWORD': 'r3co4d',
+        'PASSWORD': '2008P4P3lucho!', #'r3co4d',
         'HOST': 'localhost', # Cambio el localhost por IP (JT)
         'PORT': '3306',
     }
